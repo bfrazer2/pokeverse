@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function PokemonCard({ url, name, pokemonFiltered}) {
 
@@ -21,7 +22,7 @@ function PokemonCard({ url, name, pokemonFiltered}) {
       <div class="col-4" className = "mb-3">
         <Card style={{width: '18rem', height: '420px'}} bg="light">
           <Card.Img variant="top" src={onePokemon.sprites.front_default}></Card.Img>
-          <Card.Header className="text-center text-capitalize">{name}</Card.Header>
+          <Link to={`/${name}`}><Card.Header className="text-center text-capitalize">{name}</Card.Header></Link>  
           <Card.Text as="div" className="text-capitalize">
             <ul>Abilities:
               {onePokemon.abilities.map((ability, idx) => (
